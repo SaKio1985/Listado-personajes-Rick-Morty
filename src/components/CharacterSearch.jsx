@@ -261,45 +261,8 @@ function CharacterSearch() {
             <>
               <div className="row">
                 {characters.map((character) => (
-                  <div className="col-md-4 col-lg-3 mb-4" key={character.id}>
-                    <div className="card bg-dark border-success h-100">
-                      <div className="card-body">
-                        <Character character={character} />
-
-                        {/* Badge de estado */}
-                        <div className="mt-2">
-                          <span
-                            className={`badge ${
-                              character.status === "Alive"
-                                ? "bg-success"
-                                : character.status === "Dead"
-                                ? "bg-danger"
-                                : "bg-warning"
-                            }`}
-                          >
-                            {character.status === "Alive"
-                              ? "💚 Vivo"
-                              : character.status === "Dead"
-                              ? "💀 Muerto"
-                              : "❓ Desconocido"}
-                          </span>
-                          <span className="badge bg-info ms-2">
-                            {character.species}
-                          </span>
-                        </div>
-
-                        {/* Información adicional */}
-                        <div className="mt-2 text-muted small">
-                          <div>
-                            <strong>Género:</strong> {character.gender}
-                          </div>
-                          <div>
-                            <strong>Ubicación:</strong>{" "}
-                            {character.location.name}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  <div className="col-md-4" key={character.id}>
+                    <Character character={character} />
                   </div>
                 ))}
               </div>
